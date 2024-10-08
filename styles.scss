@@ -1,0 +1,106 @@
+// @import 'header';
+// @import 'menu';
+// @import 'footer';
+// @import 'variables';
+
+// VARIABLES
+
+// $primaryColor: black;
+
+// p{
+//     $primaryColor: blue;
+//     color: $primaryColor;
+// }
+
+// span{
+//     color: $primaryColor;
+// }
+
+// ANIDAMIENTO
+
+// .container {
+//     color: red;
+    
+//     & header{
+//         color:red;
+//     }
+//     & footer{
+//         color:blue;
+//     }
+// }
+
+// Variables de colores
+$charcoal: #404e5cff;         // Color del fondo del navbar
+$paynes-gray: #f1f5f2ff;      // Color de texto normal
+$ecru: #f1f5f2ff;             // Color de fondo del cuerpo
+$baby-powder: #f1f5f2ff;      // Color de fondo al pasar el ratón
+$indian-red: #4f6272ff;       // Color de fondo del enlace al pasar el ratón
+
+// Estilos generales
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: $ecru;
+}
+
+// Navbar
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: $charcoal;
+
+    .logo {
+        a {
+            color: $baby-powder;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            transition: color 0.3s;
+
+            &:hover {
+                color: $indian-red; // Color al pasar el ratón sobre el logo
+            }
+        }
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .menu-icon {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background-color: $baby-powder;
+            transition: all 0.3s;
+        }
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+
+        li {
+            a {
+                color: $paynes-gray;
+                text-decoration: none;
+                padding: 8px 15px;
+                transition: background-color 0.3s, color 0.3s;
+
+                &:hover {
+                    background-color: $indian-red; // Color de fondo al pasar el ratón
+                    color: $baby-powder; // Color de texto al pasar el ratón
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
